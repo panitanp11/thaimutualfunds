@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723152426) do
+ActiveRecord::Schema.define(:version => 20130806165808) do
 
   create_table "funds", :force => true do |t|
     t.string   "name",               :null => false
@@ -39,5 +39,6 @@ ActiveRecord::Schema.define(:version => 20130723152426) do
   end
 
   add_index "unit_prices", ["fund_id", "nav_date"], :name => "index_unit_prices_on_fund_id_and_nav_date", :unique => true
+  add_index "unit_prices", ["nav_date"], :name => "index_unit_prices_on_nav_date"
 
 end
