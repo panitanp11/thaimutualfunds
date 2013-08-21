@@ -13,6 +13,14 @@ class Fund < ActiveRecord::Base
     "#{name}: #{abbr}"
   end
 
+  def nav_at(date)
+    if unit_price = unit_prices.where(nav_date: date).first
+      unit_price.price.round(6)
+    else
+      0
+    end
+  end
+
   def self.format_buddhist_date(date)
    if date.match /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/
      d, m, y = $1.to_i, $2.to_i, ($3.to_i - 543)
