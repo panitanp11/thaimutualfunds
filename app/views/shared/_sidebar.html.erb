@@ -1,0 +1,8 @@
+<aside>
+  <h2>บริษัทจัดการ</h2>
+  <ul>
+    <% @management_firms.each do |m| %>
+      <li><%= link_to m.abbr, management_firm_path(m) %></li>
+    <% end %>
+  </ul>
+</aside>
