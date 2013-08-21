@@ -58,5 +58,6 @@ Thaimutualfunds::Application.routes.draw do
 
   resources :management_firms, only: [:index, :show]
 
+  get "contact" => "home#contact"
   root to: 'home#index'
 end
