@@ -1,0 +1,20 @@
+<header>
+  <div id="header" class="w">
+    <div id="logo">
+      <%= link_to root_url do %>
+        <%= image_tag "logo.png", width: "150px" %>
+      <% end %>
+    </div>
+
+    <div id="menu">
+      <ul>
+        <li class="<%= "current_page_item" if current_page?(management_firms_url) %>">
+          <%= link_to "Home", root_url %>
+        </li>
+        <li class="<%= "current_page_item" if current_page?(contact_url) %>">
+          <%= link_to "Contact", contact_url %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
