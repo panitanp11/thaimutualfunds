@@ -1,0 +1,17 @@
+<div id="page-wrapper">
+  <div class="row p w ma">
+    <div class="span2">
+      <%= render "shared/sidebar" %>
+    </div>
+
+    <div class="span9">
+      <section>
+        <h1><%= "ราคากองทุนรวมย้อนหลัง" %></h1>
+        <% @management_firms.each do |m| %>
+          <%= render "table", management_firm: m, funds: m.funds if m.funds.any? %>
+          <br>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

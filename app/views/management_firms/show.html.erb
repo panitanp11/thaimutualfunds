@@ -1,0 +1,14 @@
+<div id="page-wrapper">
+  <div class="row p w ma">
+    <div class="span2">
+      <%= render "shared/sidebar" %>
+    </div>
+
+    <div class="span9">
+      <section>
+        <h1><%= "ราคากองทุนรวมย้อนหลัง #{@management_firm}" %></h1>
+        <%= render "table", management_firm: @management_firm, funds: @funds if @funds.any? %>
+      </section>
+    </div>
+  </div>
+</div>

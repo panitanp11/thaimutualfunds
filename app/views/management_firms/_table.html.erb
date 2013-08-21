@@ -1,0 +1,18 @@
+<table class="maintable">
+  <thead>
+    <tr>
+      <th colspan="2" rowspan="2" style="width: 30%; font-size: 18px;"><%= management_firm.abbr %></th>
+      <% (NUMBER_OF_DAYS_TO_SHOW - 1).downto(0) do |i| %>
+        <th><%= @dates[i].strftime("%A") %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% (NUMBER_OF_DAYS_TO_SHOW - 1).downto(0) do |i| %>
+        <th><%= @dates[i] %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <% funds.each do |fund| %>
+    <%= render "row", fund: fund %>
+  <% end %>
+</table>
