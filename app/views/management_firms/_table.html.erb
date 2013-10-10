@@ -12,7 +12,7 @@
       <% end %>
     </tr>
   </thead>
-  <% funds.each do |fund| %>
+  <% funds.sort.each do |fund| %>
     <%= render "row", fund: fund %>
   <% end %>
 </table>
